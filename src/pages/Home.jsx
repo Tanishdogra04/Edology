@@ -910,9 +910,9 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                   {filteredCourses.map((course) => {
                     const isBlue = course.colorTheme === 'blue';
-                    const themeHoverBg = isBlue ? 'bg-[#002d84]' : 'bg-[#007b78]'; // High contrast brand colors
-                    const themeBtnText = isBlue ? 'text-[#002d84]' : 'text-[#007b78]';
-                    const topBorderColor = isBlue ? 'border-t-4 border-[#002d84]' : 'border-t-4 border-[#007b78]';
+                    const themeHoverBg = isBlue ? 'bg-[#110060]' : 'bg-[#007b78]'; // High contrast brand colors
+                    const themeBtnText = isBlue ? 'text-[#110060]' : 'text-[#007b78]';
+                    const topBorderColor = isBlue ? 'border-t-4 border-[#110060]' : 'border-t-4 border-[#007b78]';
                     const isCompared = compareList.some(c => c.id === course.id);
                     
                     return (
@@ -925,7 +925,7 @@ export default function Home() {
                           <div className="space-y-4">
                             {/* Category & Partner Logo */}
                             <div className="flex items-start justify-between gap-4">
-                              <span className={`text-[10px] font-bold tracking-wide uppercase ${isBlue ? 'text-[#002d84]' : 'text-[#007b78]'}`}>
+                              <span className={`text-[10px] font-bold tracking-wide uppercase ${isBlue ? 'text-[#110060]' : 'text-[#007b78]'}`}>
                                 {course.category}
                               </span>
                               <div className="font-sans text-[10px] font-extrabold tracking-tighter text-slate-500 text-right leading-none max-w-[120px]">
@@ -952,7 +952,7 @@ export default function Home() {
                               </div>
                             </div>
 
-                            <button className={`w-full py-2.5 rounded-lg text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer ${isBlue ? 'bg-[#002d84] hover:bg-blue-800' : 'bg-[#007b78] hover:bg-teal-800'}`}>
+                            <button className={`w-full py-2.5 rounded-lg text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer ${isBlue ? 'bg-[#110060] hover:bg-[#0b003f]' : 'bg-[#007b78] hover:bg-teal-800'}`}>
                               More Info
                             </button>
                           </div>
@@ -971,7 +971,7 @@ export default function Home() {
                             }}
                             className={`absolute top-4 right-4 w-7 h-7 rounded-full border flex items-center justify-center font-sans text-sm font-bold leading-none shadow-sm cursor-pointer transition-all ${
                               isCompared 
-                                ? 'bg-white text-[#002d84] border-white hover:bg-white/95' 
+                                ? 'bg-white text-[#110060] border-white hover:bg-white/95' 
                                 : 'bg-white/10 text-white border-white/30 hover:bg-white/20'
                             }`}
                             title={isCompared ? "Remove from Compare" : "Compare Programme"}
@@ -1085,7 +1085,7 @@ export default function Home() {
                       {/* Logo and Title Header */}
                       <div className="flex items-start gap-4">
                         {/* CSS Logo Avatar Box */}
-                        <div className="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100/80 flex-shrink-0 flex items-center justify-center text-[#002d84] font-heading font-black text-xs shadow-inner">
+                        <div className="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100/80 flex-shrink-0 flex items-center justify-center text-[#110060] font-heading font-black text-xs shadow-inner">
                           {acronym}
                         </div>
                         <div className="min-w-0">
@@ -1178,7 +1178,7 @@ export default function Home() {
                       <div className="space-y-4">
                         {/* Logo and Acronym Header */}
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100/80 flex-shrink-0 flex items-center justify-center text-[#002d84] font-heading font-black text-xs shadow-inner">
+                          <div className="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100/80 flex-shrink-0 flex items-center justify-center text-[#110060] font-heading font-black text-xs shadow-inner">
                             {exam.acronym}
                           </div>
                           <div className="min-w-0 text-left">
