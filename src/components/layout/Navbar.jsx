@@ -43,7 +43,14 @@ export default function Navbar({ onOpenSearch }) {
         <div className="flex items-center justify-between h-14">
           
           {/* Logo - Edeco Branded in Blue */}
-          <Link to="/" onClick={() => setIsMegaMenuOpen(false)} className="flex items-center gap-2 group">
+          <Link 
+            to="/" 
+            onClick={() => {
+              setIsMegaMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }} 
+            className="flex items-center gap-2 group"
+          >
             <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-all">
               <GraduationCap className="w-5.5 h-5.5" />
             </div>

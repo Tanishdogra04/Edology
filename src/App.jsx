@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import Navbar from './components/layout/Navbar';
@@ -22,6 +22,16 @@ import Register from './pages/Login';
 
 import './App.css';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -29,6 +39,7 @@ export default function App() {
     <ErrorBoundary>
       <AppProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <div className="min-h-screen flex flex-col bg-white text-slate-900">
             
             {/* Global Sticky Navbar */}
