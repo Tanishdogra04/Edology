@@ -5,21 +5,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Fonts */
   --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
   --font-serif: "Poppins", system-ui, -apple-system, sans-serif;
   --font-heading: "Poppins", system-ui, -apple-system, sans-serif;
 
-  /* Custom Colors */
   --color-primary: #2563EB;
   --color-primary-hover: #1D4ED8;
   --color-secondary: #1E293B;
-  --color-accent: #259609; /* Set accent to Edology Green */
+  --color-accent: #259609; 
   --color-accent-hover: #1E7E07;
   --color-light-gray: #F8FAFC;
   --color-text-dark: #0F172A;
   
-  /* Additional customizations */
   --animate-float: float 6s ease-in-out infinite;
   --animate-slide-in-right: slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --animate-swing: swing 1.5s ease-in-out infinite;
@@ -40,7 +37,6 @@
   }
 }
 
-/* Animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -79,7 +75,6 @@
   }
 }
 
-/* Glassmorphism Classes */
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -94,7 +89,6 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

@@ -10,7 +10,6 @@ import {
   HelpCircle, User, Mail, Phone, Briefcase, FileText, Send
 } from 'lucide-react';
 
-// Form validation schema using Zod
 const applySchema = z.object({
   fullName: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
@@ -61,13 +60,11 @@ export default function CourseDetails() {
   return (
     <div className="pb-20 pt-20">
       
-      {/* 1. HERO BLOCK */}
       <section className="bg-slate-50 text-slate-800 dark:bg-slate-900 border-b border-slate-200/60 py-16 text-left">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-8 space-y-6">
             
-            {/* Badges & Univ */}
             <div className="flex flex-wrap items-center gap-3">
               <span className="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold uppercase rounded-lg">
                 {course.category.toUpperCase()}
@@ -77,12 +74,10 @@ export default function CourseDetails() {
               </span>
             </div>
 
-            {/* Course Title */}
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
               {course.title}
             </h1>
 
-            {/* Quick specifications grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-200/60 dark:border-slate-800">
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-blue-600 flex-shrink-0" />
@@ -116,7 +111,6 @@ export default function CourseDetails() {
 
           </div>
 
-          {/* Pricing Box in Hero */}
           <div className="lg:col-span-4 bg-white dark:bg-slate-950 border border-slate-200/75 dark:border-slate-800 p-6 rounded-2xl space-y-4 shadow-sm">
             <div>
               <p className="text-xs text-slate-400 font-semibold">Total Tuition Package</p>
@@ -152,13 +146,10 @@ export default function CourseDetails() {
         </div>
       </section>
 
-      {/* 2. BODY CONTENT */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        {/* Left Column: Core Program Details */}
         <div className="lg:col-span-8 space-y-12 text-left">
           
-          {/* Overview */}
           <section className="space-y-4">
             <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">Program Overview</h2>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -166,7 +157,6 @@ export default function CourseDetails() {
             </p>
           </section>
 
-          {/* Learning Outcomes */}
           <section className="space-y-4 bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
             <h2 className="font-heading text-xl font-bold text-slate-900 dark:text-white">What You Will Master</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -179,7 +169,6 @@ export default function CourseDetails() {
             </div>
           </section>
 
-          {/* Curriculum Accordion */}
           <section className="space-y-4">
             <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">Academic Curriculum</h2>
             <p className="text-xs text-slate-500">Click on any academic module block to see comprehensive topic listings.</p>
@@ -211,7 +200,6 @@ export default function CourseDetails() {
             </div>
           </section>
 
-          {/* Faculty section */}
           <section className="space-y-6">
             <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">Expert Faculty</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -231,7 +219,6 @@ export default function CourseDetails() {
             </div>
           </section>
 
-          {/* University accreditation */}
           {university && (
             <section className="p-6 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl space-y-4">
               <h2 className="font-heading text-xl font-bold text-slate-900 dark:text-white">About the Awarding Institution</h2>
@@ -255,7 +242,6 @@ export default function CourseDetails() {
             </section>
           )}
 
-          {/* FAQs */}
           <section className="space-y-4">
             <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">Frequently Asked Questions</h2>
             <div className="space-y-3">
@@ -289,7 +275,6 @@ export default function CourseDetails() {
 
         </div>
 
-        {/* Right Column: Apply form Sidebar */}
         <div id="apply-form" className="lg:col-span-4 space-y-6 text-left">
           
           <div className="bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800 rounded-3xl p-6 shadow-md sticky top-24">
@@ -300,7 +285,6 @@ export default function CourseDetails() {
 
             <form onSubmit={handleSubmit(onApplySubmit)} className="space-y-4">
               
-              {/* Full Name */}
               <div className="space-y-1">
                 <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Full Name</label>
                 <div className="relative">
@@ -315,7 +299,6 @@ export default function CourseDetails() {
                 {errors.fullName && <p className="text-[10px] text-red-500 font-medium">{errors.fullName.message}</p>}
               </div>
 
-              {/* Email */}
               <div className="space-y-1">
                 <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Work Email</label>
                 <div className="relative">
@@ -330,7 +313,6 @@ export default function CourseDetails() {
                 {errors.email && <p className="text-[10px] text-red-500 font-medium">{errors.email.message}</p>}
               </div>
 
-              {/* Phone */}
               <div className="space-y-1">
                 <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Phone Number</label>
                 <div className="relative">
@@ -345,7 +327,6 @@ export default function CourseDetails() {
                 {errors.phone && <p className="text-[10px] text-red-500 font-medium">{errors.phone.message}</p>}
               </div>
 
-              {/* Experience */}
               <div className="space-y-1">
                 <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Work Experience</label>
                 <div className="relative">
@@ -364,7 +345,6 @@ export default function CourseDetails() {
                 {errors.experience && <p className="text-[10px] text-red-500 font-medium">{errors.experience.message}</p>}
               </div>
 
-              {/* Statement */}
               <div className="space-y-1">
                 <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Statement of Purpose</label>
                 <div className="relative">
@@ -379,7 +359,6 @@ export default function CourseDetails() {
                 {errors.statement && <p className="text-[10px] text-red-500 font-medium">{errors.statement.message}</p>}
               </div>
 
-              {/* Submit */}
               <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-1.5 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-md transition-all shadow-blue-500/10 hover:scale-[1.02] cursor-pointer"

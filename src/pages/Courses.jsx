@@ -12,17 +12,14 @@ export default function Courses() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { wishlist, compareList, toggleCompare, clearCompare } = useApp();
 
-  // Search/Filters states
   const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'all');
   const [selectedUniv, setSelectedUniv] = useState('all');
   const [sortBy, setSortBy] = useState('rating');
   const [showFilters, setShowFilters] = useState(false);
 
-  // Active filter tab (all, wishlist, compare)
   const activeFilter = searchParams.get('filter') || 'all';
 
-  // Keep search state synchronized with URL params
   useEffect(() => {
     const search = searchParams.get('search');
     if (search !== null) {
@@ -30,7 +27,6 @@ export default function Courses() {
     }
   }, [searchParams]);
 
-  // Handle setting filters in URL
   const handleFilterTabChange = (tab) => {
     const params = new URLSearchParams(searchParams);
     if (tab === 'all') {
@@ -52,18 +48,15 @@ export default function Courses() {
     setSearchParams(params);
   };
 
-  // Filter and sort core logic
   const getFilteredCourses = () => {
     let list = [...courses];
 
-    // Filter by type tab
     if (activeFilter === 'wishlist') {
       list = list.filter(c => wishlist.includes(c.id));
     } else if (activeFilter === 'compare') {
       return compareList; // Compare view returns list for comparison table
     }
 
-    // Filter by Search Query
     if (searchQuery.trim() !== '') {
       list = list.filter(c => 
         c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -72,17 +65,14 @@ export default function Courses() {
       );
     }
 
-    // Filter by Category
     if (selectedCategory !== 'all') {
       list = list.filter(c => c.category === selectedCategory);
     }
 
-    // Filter by University
     if (selectedUniv !== 'all') {
       list = list.filter(c => c.universityId === selectedUniv);
     }
 
-    // Sort
     list.sort((a, b) => {
       if (sortBy === 'price-low') return a.price - b.price;
       if (sortBy === 'price-high') return b.price - a.price;
@@ -98,7 +88,6 @@ export default function Courses() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-24 space-y-8">
       
-      {/* Page Header */}
       <div className="text-left space-y-2">
         <h1 className="font-heading text-3xl font-extrabold text-slate-900 dark:text-white">
           {activeFilter === 'wishlist' ? 'My Saved Programs' : 
@@ -112,7 +101,6 @@ export default function Courses() {
         </p>
       </div>
 
-      {/* Filter Tabs Toggle */}
       <div className="flex border-b border-slate-100 dark:border-slate-800 pb-px">
         <button
           onClick={() => handleFilterTabChange('all')}
@@ -148,12 +136,10 @@ export default function Courses() {
         </button>
       </div>
 
-      {/* Standard Directory Filter Toolbar */}
       {activeFilter !== 'compare' && (
         <div className="space-y-4">
           <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
             
-            {/* Search Input */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-slate-400" />
               <input
@@ -165,7 +151,6 @@ export default function Courses() {
               />
             </div>
 
-            {/* Filter buttons */}
             <div className="flex gap-2">
               <button
                 onClick={() => setShowFilters(!showFilters)}
@@ -195,10 +180,8 @@ export default function Courses() {
 
           </div>
 
-          {/* Collapsible Advanced Filters options */}
           {showFilters && (
             <div className="p-5 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-2xl grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in text-left">
-              {/* Category selector */}
               <div>
                 <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide mb-3">Academic Fields</h4>
                 <div className="flex flex-wrap gap-2">
@@ -228,7 +211,6 @@ export default function Courses() {
                 </div>
               </div>
 
-              {/* University Selector */}
               <div>
                 <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide mb-3">Accrediting Institution</h4>
                 <div className="flex flex-wrap gap-2">
@@ -262,7 +244,6 @@ export default function Courses() {
         </div>
       )}
 
-      {/* CORE DISPLAY LOGIC */}
       {activeFilter === 'compare' ? (
         /* COMPARISON MATRIX SECTION */
         compareList.length > 0 ? (
@@ -301,7 +282,6 @@ export default function Courses() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-150 dark:divide-slate-800">
-                {/* Tuition Cost */}
                 <tr>
                   <td className="p-4 font-semibold bg-slate-50/50 dark:bg-slate-950/25">Tuition Cost</td>
                   {compareList.map(c => (
@@ -311,7 +291,6 @@ export default function Courses() {
                   ))}
                   {compareList.length < 3 && <td className="p-4 bg-slate-50/20 dark:bg-slate-900/10 border-l border-dashed border-slate-200 dark:border-slate-800" />}
                 </tr>
-                {/* Duration */}
                 <tr>
                   <td className="p-4 font-semibold bg-slate-50/50 dark:bg-slate-950/25">Program Duration</td>
                   {compareList.map(c => (
@@ -319,7 +298,6 @@ export default function Courses() {
                   ))}
                   {compareList.length < 3 && <td className="p-4 bg-slate-50/20 dark:bg-slate-900/10 border-l border-dashed border-slate-200 dark:border-slate-800" />}
                 </tr>
-                {/* Study Mode */}
                 <tr>
                   <td className="p-4 font-semibold bg-slate-50/50 dark:bg-slate-950/25">Methodology</td>
                   {compareList.map(c => (
@@ -327,7 +305,6 @@ export default function Courses() {
                   ))}
                   {compareList.length < 3 && <td className="p-4 bg-slate-50/20 dark:bg-slate-900/10 border-l border-dashed border-slate-200 dark:border-slate-800" />}
                 </tr>
-                {/* Academic Rating */}
                 <tr>
                   <td className="p-4 font-semibold bg-slate-50/50 dark:bg-slate-950/25">Academic Review</td>
                   {compareList.map(c => (
@@ -341,7 +318,6 @@ export default function Courses() {
                   ))}
                   {compareList.length < 3 && <td className="p-4 bg-slate-50/20 dark:bg-slate-900/10 border-l border-dashed border-slate-200 dark:border-slate-800" />}
                 </tr>
-                {/* Eligibility */}
                 <tr>
                   <td className="p-4 font-semibold bg-slate-50/50 dark:bg-slate-950/25">Eligibility</td>
                   {compareList.map(c => (
@@ -351,7 +327,6 @@ export default function Courses() {
                   ))}
                   {compareList.length < 3 && <td className="p-4 bg-slate-50/20 dark:bg-slate-900/10 border-l border-dashed border-slate-200 dark:border-slate-800" />}
                 </tr>
-                {/* Key Outcomes */}
                 <tr>
                   <td className="p-4 font-semibold bg-slate-50/50 dark:bg-slate-950/25">Key Syllabus Focus</td>
                   {compareList.map(c => (

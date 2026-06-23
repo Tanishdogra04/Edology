@@ -7,7 +7,6 @@ import Footer from './components/layout/Footer';
 import SearchModal from './components/common/SearchModal';
 import ComparePanel from './components/course/ComparePanel';
 
-// Pages
 import Home from './pages/Home';
 import Courses from './pages/Courses';
 import CourseDetails from './pages/CourseDetails';
@@ -42,16 +41,12 @@ export default function App() {
           <ScrollToTop />
           <div className="min-h-screen flex flex-col bg-white text-slate-900">
             
-            {/* Global Sticky Navbar */}
             <Navbar onOpenSearch={() => setIsSearchOpen(true)} />
 
-            {/* Global Search Modal */}
             <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
-            {/* Global Compare Panel */}
             <ComparePanel />
 
-            {/* Main Page Routing Content */}
             <main className="flex-grow pt-20">
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -68,7 +63,6 @@ export default function App() {
               </Routes>
             </main>
 
-            {/* Global Footer */}
             <Footer />
 
           </div>

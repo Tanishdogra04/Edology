@@ -6,10 +6,8 @@ export default function Breadcrumbs() {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter(x => x);
 
-  // If we are on home, do not render breadcrumbs
   if (pathnames.length === 0) return null;
 
-  // Map path segments to readable titles
   const routeMap = {
     courses: 'Courses',
     universities: 'Universities',
@@ -39,7 +37,6 @@ export default function Breadcrumbs() {
             const last = index === pathnames.length - 1;
             const to = `/${pathnames.slice(0, index + 1).join('/')}`;
             
-            // Map or capitalize segment name
             const label = routeMap[value] || value
               .replace(/-/g, ' ')
               .replace(/\b\w/g, c => c.toUpperCase());

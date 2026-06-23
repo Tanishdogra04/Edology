@@ -9,7 +9,6 @@ export default function SearchModal({ isOpen, onClose }) {
   const inputRef = useRef(null);
   const navigate = useNavigate();
 
-  // Focus input when modal opens
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
@@ -22,7 +21,6 @@ export default function SearchModal({ isOpen, onClose }) {
     };
   }, [isOpen]);
 
-  // Handle escape key to close
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && isOpen) {
@@ -33,7 +31,6 @@ export default function SearchModal({ isOpen, onClose }) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Live filter results
   useEffect(() => {
     if (query.trim() === '') {
       setResults([]);
@@ -58,16 +55,13 @@ export default function SearchModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4">
-      {/* Backdrop */}
       <div 
         onClick={onClose}
         className="fixed inset-0 bg-slate-950/40 backdrop-blur-sm transition-opacity" 
       />
 
-      {/* Modal Content */}
       <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden animate-fade-in">
         
-        {/* Search input container */}
         <div className="flex items-center gap-3 px-4 border-b border-slate-150 dark:border-slate-800 py-3.5">
           <Search className="w-5 h-5 text-slate-400 dark:text-slate-500" />
           <input
@@ -95,7 +89,6 @@ export default function SearchModal({ isOpen, onClose }) {
           </button>
         </div>
 
-        {/* Results / Suggestions */}
         <div className="p-4 max-h-[400px] overflow-y-auto">
           {results.length > 0 ? (
             <div className="space-y-3">
@@ -134,7 +127,6 @@ export default function SearchModal({ isOpen, onClose }) {
             </div>
           ) : (
             <div className="space-y-6 py-2">
-              {/* Popular Searches */}
               <div className="space-y-2.5">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
                   Popular Searches
@@ -152,7 +144,6 @@ export default function SearchModal({ isOpen, onClose }) {
                 </div>
               </div>
 
-              {/* Navigation links in search */}
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <button
                   onClick={() => { navigate('/courses'); onClose(); }}

@@ -5,58 +5,47 @@ const AppContext = createContext();
 export const useApp = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
-  // Theme state (Forced to light theme)
   const [darkMode, setDarkMode] = useState(false);
 
-  // Wishlist state
   const [wishlist, setWishlist] = useState(() => {
     const saved = localStorage.getItem('wishlist');
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Compare courses state (limit to 3)
   const [compareList, setCompareList] = useState(() => {
     const saved = localStorage.getItem('compareList');
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Recently viewed courses state (limit to 5)
   const [recentlyViewed, setRecentlyViewed] = useState(() => {
     const saved = localStorage.getItem('recentlyViewed');
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Toast notifications state
   const [toasts, setToasts] = useState([]);
 
-  // Mock User Session
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem('user');
     return saved ? JSON.parse(saved) : null;
   });
 
-  // Apply light mode theme (Dark mode disabled)
   useEffect(() => {
     document.documentElement.classList.remove('dark');
     localStorage.setItem('theme', 'light');
   }, []);
 
-  // Sync wishlist
   useEffect(() => {
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
   }, [wishlist]);
 
-  // Sync compare list
   useEffect(() => {
     localStorage.setItem('compareList', JSON.stringify(compareList));
   }, [compareList]);
 
-  // Sync recently viewed
   useEffect(() => {
     localStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed));
   }, [recentlyViewed]);
 
-  // Sync user
   useEffect(() => {
     if (user) {
       localStorage.setItem('user', JSON.stringify(user));
@@ -65,7 +54,6 @@ export const AppProvider = ({ children }) => {
     }
   }, [user]);
 
-  // Toast helper
   const showToast = (message, type = 'success') => {
     const id = Date.now();
     setToasts(prev => [...prev, { id, message, type }]);
@@ -78,7 +66,6 @@ export const AppProvider = ({ children }) => {
     setToasts(prev => prev.filter(t => t.id !== id));
   };
 
-  // Toggle wishlist
   const toggleWishlist = (courseId) => {
     if (wishlist.includes(courseId)) {
       setWishlist(prev => prev.filter(id => id !== courseId));
@@ -89,7 +76,6 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  // Toggle comparison
   const toggleCompare = (course) => {
     const exists = compareList.find(c => c.id === course.id);
     if (exists) {
@@ -110,7 +96,6 @@ export const AppProvider = ({ children }) => {
     showToast('Comparison list cleared', 'info');
   };
 
-  // Add recently viewed
   const addRecentlyViewed = (courseId) => {
     setRecentlyViewed(prev => {
       const filtered = prev.filter(id => id !== courseId);
@@ -150,7 +135,6 @@ export const AppProvider = ({ children }) => {
     }}>
       {children}
       
-      {/* Toast Notification Container */}
       <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm pointer-events-none">
         {toasts.map(toast => (
           <div

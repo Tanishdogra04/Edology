@@ -17,22 +17,18 @@ export default function RecommendationWidget() {
   const handleExperience = (exp) => {
     setExperience(exp);
     
-    // Core Recommendation Engine logic
     let matched = null;
     
     if (categoryMapping[interest]) {
       const categoryCourses = courses.filter(c => c.category === categoryMapping[interest]);
       
       if (exp === 'executive') {
-        // Prefer MBA or Executive
         matched = categoryCourses.find(c => c.title.toLowerCase().includes('executive') || c.title.toLowerCase().includes('mba')) || categoryCourses[0];
       } else {
-        // Prefer Technical Masters or certificates
         matched = categoryCourses.find(c => !c.title.toLowerCase().includes('executive')) || categoryCourses[0];
       }
     }
     
-    // Default fallback
     if (!matched) matched = courses[0];
     
     setRecommendation(matched);
@@ -55,11 +51,9 @@ export default function RecommendationWidget() {
   return (
     <div className="bg-gradient-to-tr from-slate-900 via-slate-850 to-blue-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-blue-900/40 relative overflow-hidden">
       
-      {/* Background glowing effects */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Widget Header */}
       <div className="flex items-center gap-2 mb-6">
         <div className="w-9 h-9 rounded-xl bg-blue-600/30 flex items-center justify-center border border-blue-500/30">
           <Sparkles className="w-5 h-5 text-cyan-400" />
@@ -70,7 +64,6 @@ export default function RecommendationWidget() {
         </div>
       </div>
 
-      {/* STEP 1: Select Field */}
       {step === 1 && (
         <div className="space-y-4 animate-fade-in">
           <h4 className="font-heading font-semibold text-base sm:text-lg">What is your primary career field of interest?</h4>
@@ -99,7 +92,6 @@ export default function RecommendationWidget() {
         </div>
       )}
 
-      {/* STEP 2: Experience level */}
       {step === 2 && (
         <div className="space-y-4 animate-fade-in">
           <h4 className="font-heading font-semibold text-base">Select your current experience level:</h4>
@@ -128,7 +120,6 @@ export default function RecommendationWidget() {
         </div>
       )}
 
-      {/* STEP 3: Recommended Course Output */}
       {step === 3 && recommendation && (
         <div className="space-y-5 animate-fade-in">
           <div className="bg-blue-600/10 border border-blue-500/20 p-4 rounded-2xl flex items-start gap-4">

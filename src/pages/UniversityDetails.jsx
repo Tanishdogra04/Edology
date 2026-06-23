@@ -26,7 +26,6 @@ export default function UniversityDetails() {
   return (
     <div className="pb-20 pt-20 text-left">
       
-      {/* 1. STUNNING HERO BANNER */}
       <section className="relative h-64 sm:h-80 bg-slate-900 overflow-hidden">
         <img 
           src={univ.image} 
@@ -35,7 +34,6 @@ export default function UniversityDetails() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
         
-        {/* Banner Details */}
         <div className="absolute bottom-6 left-0 w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-3">
             <span className="inline-block self-start px-3 py-1 bg-cyan-600/90 text-white text-[10px] font-bold uppercase rounded-lg">
@@ -59,13 +57,10 @@ export default function UniversityDetails() {
         </div>
       </section>
 
-      {/* 2. BODY CONTENT */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        {/* Left column: Info details */}
         <div className="lg:col-span-8 space-y-12">
           
-          {/* About */}
           <section className="space-y-4">
             <h2 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">About the Institution</h2>
             <p className="text-sm text-slate-650 dark:text-slate-400 leading-relaxed">
@@ -73,7 +68,6 @@ export default function UniversityDetails() {
             </p>
           </section>
 
-          {/* Programs Offered */}
           <section className="space-y-6">
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
               <h2 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Accredited Academic Programs</h2>
@@ -92,7 +86,6 @@ export default function UniversityDetails() {
             )}
           </section>
 
-          {/* Student Reviews */}
           <section className="space-y-6">
             <h2 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Alumni & Student Experiences</h2>
             <div className="grid grid-cols-1 gap-6">
@@ -118,10 +111,8 @@ export default function UniversityDetails() {
 
         </div>
 
-        {/* Right column: Sidebar accreditation metrics */}
         <div className="lg:col-span-4 space-y-6">
           
-          {/* Institutional Stats */}
           <div className="bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
             <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-400 dark:text-slate-500">Key Statistics</h3>
             
@@ -137,7 +128,6 @@ export default function UniversityDetails() {
             </div>
           </div>
 
-          {/* Accreditations Accordion */}
           <div className="bg-slate-50 text-slate-800 border border-slate-200/60 rounded-2xl p-6 shadow-sm space-y-4">
             <div className="flex items-center gap-2 text-blue-600">
               <Shield className="w-5 h-5" />

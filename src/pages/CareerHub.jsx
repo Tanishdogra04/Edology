@@ -8,7 +8,6 @@ export default function CareerHub() {
 
   const activeHub = careerHub.find(ch => ch.category === activeCategory) || careerHub[0];
 
-  // Helper to find courses for skills recommendation
   const getRecommendedCourse = (roleTitle) => {
     if (roleTitle.toLowerCase().includes('ai') || roleTitle.toLowerCase().includes('model')) {
       return courses.find(c => c.id === 'pg-ai-caltech');
@@ -19,14 +18,12 @@ export default function CareerHub() {
     if (roleTitle.toLowerCase().includes('software') || roleTitle.toLowerCase().includes('architect')) {
       return courses.find(c => c.id === 'msc-cs-iu');
     }
-    // Business fallback
     return courses.find(c => c.id === 'exec-mba-ssbm');
   };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-24 space-y-10 text-left">
       
-      {/* Header */}
       <div className="space-y-4">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900 rounded-full text-xs font-semibold text-blue-600 dark:text-cyan-400">
           <Sparkles className="w-3.5 h-3.5 animate-pulse" />
@@ -40,7 +37,6 @@ export default function CareerHub() {
         </p>
       </div>
 
-      {/* Category selector */}
       <div className="flex border-b border-slate-100 dark:border-slate-800 pb-px">
         {careerHub.map(ch => (
           <button
@@ -58,7 +54,6 @@ export default function CareerHub() {
         ))}
       </div>
 
-      {/* Roles Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {activeHub.roles.map((role, idx) => {
           const matchedCourse = getRecommendedCourse(role.title);
@@ -69,7 +64,6 @@ export default function CareerHub() {
             >
               <div className="space-y-4">
                 
-                {/* Role Header */}
                 <div className="space-y-1.5">
                   <span className="inline-block px-2.5 py-0.5 bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-cyan-400 text-[9px] font-bold uppercase rounded">
                     {role.demand}
@@ -79,7 +73,6 @@ export default function CareerHub() {
                   </h3>
                 </div>
 
-                {/* Salary trajectories */}
                 <div className="flex items-center gap-1.5 p-3 bg-slate-50 dark:bg-slate-950 rounded-xl">
                   <DollarSign className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                   <div>
@@ -88,7 +81,6 @@ export default function CareerHub() {
                   </div>
                 </div>
 
-                {/* Required Skills checklist */}
                 <div className="space-y-2 pt-2">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Prerequisite Competencies</p>
                   <div className="space-y-1.5">
@@ -103,7 +95,6 @@ export default function CareerHub() {
 
               </div>
 
-              {/* Recommended Course button */}
               {matchedCourse && (
                 <div className="mt-8 pt-4 border-t border-slate-50 dark:border-slate-800/80 space-y-3">
                   <p className="text-[10px] text-slate-405 font-medium leading-relaxed">

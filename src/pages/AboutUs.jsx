@@ -5,7 +5,6 @@ export default function AboutUs() {
   return (
     <div className="space-y-16 pb-20 pt-24 text-left">
       
-      {/* Story & Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <h1 className="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Our Academic Mission</h1>
         <p className="text-sm sm:text-base text-slate-500 dark:text-slate-405 leading-relaxed max-w-3xl">
@@ -43,7 +42,6 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
       <section className="bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800/60 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
           
@@ -70,7 +68,6 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Team Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">Academic Leadership Board</h2>
         

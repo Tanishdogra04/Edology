@@ -27,7 +27,6 @@ export default function Contact() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-24 space-y-12 text-left">
       
-      {/* Header */}
       <div className="space-y-3">
         <h1 className="font-heading text-3xl font-extrabold text-slate-900 dark:text-white">
           Contact Admissions Support
@@ -39,7 +38,6 @@ export default function Contact() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        {/* Left column: Info card */}
         <div className="lg:col-span-5 space-y-6">
           
           <div className="bg-slate-50 text-slate-700 border border-slate-200/60 rounded-3xl p-6 sm:p-8 space-y-6">
@@ -74,7 +72,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Regional Offices */}
           <div className="p-6 border border-slate-150 dark:border-slate-800 rounded-2xl space-y-4">
             <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-405">Regional Offices</h3>
             
@@ -92,14 +89,12 @@ export default function Contact() {
 
         </div>
 
-        {/* Right column: Form */}
         <div className="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
           <h3 className="font-heading font-extrabold text-lg text-slate-900 dark:text-white mb-6">Send Us a Message</h3>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Name */}
               <div className="space-y-1">
                 <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide">Full Name</label>
                 <input
@@ -111,7 +106,6 @@ export default function Contact() {
                 {errors.fullName && <p className="text-[10px] text-red-500 font-medium">{errors.fullName.message}</p>}
               </div>
 
-              {/* Email */}
               <div className="space-y-1">
                 <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide">Email Address</label>
                 <input
@@ -124,7 +118,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Subject */}
             <div className="space-y-1">
               <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide">Subject</label>
               <input
@@ -136,7 +129,6 @@ export default function Contact() {
               {errors.subject && <p className="text-[10px] text-red-500 font-medium">{errors.subject.message}</p>}
             </div>
 
-            {/* Message */}
             <div className="space-y-1">
               <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide">Message Details</label>
               <textarea

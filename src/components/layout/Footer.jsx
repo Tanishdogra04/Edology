@@ -20,7 +20,6 @@ export default function Footer() {
     <footer className="bg-[#121214] text-slate-400 border-t border-slate-900 pt-16 pb-8 text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Newsletter section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12 border-b border-slate-800/80">
           <div className="lg:col-span-2 space-y-3">
             <h3 className="font-heading text-xl md:text-2xl font-bold text-white">
@@ -51,10 +50,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Links grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12">
           
-          {/* Brand Info */}
           <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
@@ -104,7 +101,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 1: Explore */}
           <div className="space-y-4">
             <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-slate-200">Explore</h4>
             <ul className="space-y-2 text-sm">
@@ -131,7 +127,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: Resources */}
           <div className="space-y-4">
             <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-slate-200">Resources</h4>
             <ul className="space-y-2 text-sm">
@@ -158,7 +153,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Contact */}
           <div className="space-y-4">
             <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-slate-200">Support</h4>
             <ul className="space-y-3.5 text-xs text-slate-400">
@@ -181,7 +175,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom copyright */}
         <div className="border-t border-slate-800/80 pt-8 mt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Edeco. All rights reserved. Designed to the highest academic quality standards.</p>
           <div className="flex items-center gap-6">

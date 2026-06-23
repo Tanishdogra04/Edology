@@ -14,7 +14,6 @@ export default function ComparePanel() {
     <div className="fixed bottom-0 left-0 w-full z-45 px-4 sm:px-6 lg:px-8 pb-4 pointer-events-none">
       <div className="max-w-4xl mx-auto pointer-events-auto bg-white text-slate-800 border border-slate-200 shadow-2xl rounded-2xl overflow-hidden transition-all duration-300">
         
-        {/* Header bar */}
         <div className="flex items-center justify-between px-5 py-3 border-b border-slate-100">
           <div className="flex items-center gap-2">
             <RefreshCw className="w-4 h-4 text-blue-600 animate-spin-slow" />
@@ -38,11 +37,9 @@ export default function ComparePanel() {
           </div>
         </div>
 
-        {/* Comparison list content */}
         {isExpanded && (
           <div className="p-4 sm:p-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             
-            {/* Added Courses list */}
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
               {compareList.map(course => (
                 <div 
@@ -71,7 +68,6 @@ export default function ComparePanel() {
                 </div>
               ))}
               
-              {/* Placeholders */}
               {Array.from({ length: 3 - compareList.length }).map((_, i) => (
                 <div 
                   key={i}
@@ -82,7 +78,6 @@ export default function ComparePanel() {
               ))}
             </div>
 
-            {/* CTA action button */}
             <div className="flex sm:flex-col justify-center gap-2">
               <button
                 onClick={() => {

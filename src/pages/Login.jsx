@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Lock, Mail, User, ShieldCheck, ArrowRight, KeyRound } from 'lucide-react';
 
-// Zod schemas
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
   password: z.string().min(6, 'Password must be at least 6 characters')
@@ -31,7 +30,6 @@ export default function Login() {
   const [emailForOtp, setEmailForOtp] = useState('');
   const [otpCode, setOtpCode] = useState(['', '', '', '']);
 
-  // Forms
   const { 
     register: registerLogin, 
     handleSubmit: handleSubmitLogin, 
@@ -44,7 +42,6 @@ export default function Login() {
     formState: { errors: errorsReg } 
   } = useForm({ resolver: zodResolver(registerSchema) });
 
-  // Handlers
   const handleLoginSubmit = (data) => {
     login(data.email, 'Alumni Student');
     navigate('/');
@@ -91,7 +88,6 @@ export default function Login() {
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pt-24 text-left">
       <div className="max-w-md w-full bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800 p-8 rounded-3xl shadow-lg space-y-6">
         
-        {/* Header section based on mode */}
         <div className="text-center space-y-2">
           <h2 className="font-heading text-2xl font-bold text-slate-850 dark:text-white">
             {mode === 'login' && 'Sign in to Edology'}
@@ -107,7 +103,6 @@ export default function Login() {
           </p>
         </div>
 
-        {/* 1. LOGIN MODE */}
         {mode === 'login' && (
           <form onSubmit={handleSubmitLogin(handleLoginSubmit)} className="space-y-4">
             <div className="space-y-1">
@@ -168,7 +163,6 @@ export default function Login() {
           </form>
         )}
 
-        {/* 2. REGISTER MODE */}
         {mode === 'register' && (
           <form onSubmit={handleSubmitReg(handleRegisterSubmit)} className="space-y-4">
             
@@ -249,7 +243,6 @@ export default function Login() {
           </form>
         )}
 
-        {/* 3. FORGOT PASSWORD MODE */}
         {mode === 'forgot' && (
           <form onSubmit={handleForgotSubmit} className="space-y-4">
             <div className="space-y-1">
@@ -283,7 +276,6 @@ export default function Login() {
           </form>
         )}
 
-        {/* 4. OTP VERIFICATION MODE */}
         {mode === 'otp' && (
           <form onSubmit={handleOtpSubmit} className="space-y-6">
             

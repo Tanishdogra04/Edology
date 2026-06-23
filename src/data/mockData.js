@@ -349,7 +349,7 @@ export const courses = [
     id: "global-mba-coventry",
     title: "Global Master of Business Administration",
     category: "business",
-    universityId: "ljmu", // Grouped under UK universities for convenience
+    universityId: "ljmu",
     universityName: "Coventry University",
     universityLogo: "🇬🇧 Coventry University",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",

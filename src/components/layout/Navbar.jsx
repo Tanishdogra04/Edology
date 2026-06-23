@@ -42,7 +42,6 @@ export default function Navbar({ onOpenSearch }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           
-          {/* Logo - Edeco Branded in Blue */}
           <Link 
             to="/" 
             onClick={() => {
@@ -59,10 +58,8 @@ export default function Navbar({ onOpenSearch }) {
             </span>
           </Link>
 
-          {/* Desktop Nav Links - Solid dark slate font on white background */}
           <nav className="hidden lg:flex items-center gap-8">
             
-            {/* Programmes Mega Menu Toggle */}
             <button 
               onClick={() => {
                 setIsMegaMenuOpen(!isMegaMenuOpen);
@@ -77,7 +74,6 @@ export default function Navbar({ onOpenSearch }) {
               <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${isMegaMenuOpen ? 'rotate-180 text-blue-600' : ''}`} />
             </button>
 
-            {/* Career Hub */}
             <NavLink 
               to="/career-hub" 
               onClick={() => setIsMegaMenuOpen(false)}
@@ -88,7 +84,6 @@ export default function Navbar({ onOpenSearch }) {
               Career Hub
             </NavLink>
             
-            {/* Top University */}
             <NavLink 
               to="/universities" 
               onClick={() => setIsMegaMenuOpen(false)}
@@ -99,7 +94,6 @@ export default function Navbar({ onOpenSearch }) {
               Top University
             </NavLink>
 
-            {/* Tools Dropdown */}
             <div 
               className="relative"
               onMouseEnter={() => setIsToolsMenuOpen(true)}
@@ -142,10 +136,8 @@ export default function Navbar({ onOpenSearch }) {
 
           </nav>
 
-          {/* Right side Actions */}
           <div className="hidden lg:flex items-center gap-5">
             
-            {/* Mail Link prefix (opens Gmail to compose) */}
             <a 
               href="https://mail.google.com/mail/?view=cm&fs=1&to=edeco@gmail.com"
               target="_blank"
@@ -158,7 +150,6 @@ export default function Navbar({ onOpenSearch }) {
 
 
 
-            {/* Wishlist count badge if any */}
             {wishlist.length > 0 && (
               <Link 
                 to="/courses?filter=wishlist" 
@@ -171,7 +162,6 @@ export default function Navbar({ onOpenSearch }) {
               </Link>
             )}
 
-            {/* Profile Dropdown or Sign In */}
             {user ? (
               <div className="relative">
                 <button 
@@ -209,7 +199,6 @@ export default function Navbar({ onOpenSearch }) {
               </Link>
             )}
 
-            {/* Search CTA Trigger Button */}
             <button 
               onClick={onOpenSearch}
               className="flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-md shadow-blue-500/10 cursor-pointer transition-all animate-pulse"
@@ -221,7 +210,6 @@ export default function Navbar({ onOpenSearch }) {
 
           </div>
 
-          {/* Mobile Actions: Hamburger and Search */}
           <div className="flex lg:hidden items-center gap-3">
             <button 
               onClick={onOpenSearch}
@@ -241,7 +229,6 @@ export default function Navbar({ onOpenSearch }) {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden border-t border-slate-100 bg-white px-4 py-6 space-y-4 shadow-inner max-h-[85vh] overflow-y-auto">
           <nav className="flex flex-col gap-4 text-left">
@@ -277,7 +264,6 @@ export default function Navbar({ onOpenSearch }) {
 
           <hr className="border-slate-100" />
 
-          {/* Mobile Auth / Profile */}
           <div className="flex flex-col gap-3">
             {user ? (
               <div className="space-y-2 text-left">
@@ -322,7 +308,6 @@ export default function Navbar({ onOpenSearch }) {
         </div>
       )}
 
-      {/* Backdrop overlay for Mega Menu */}
       {isMegaMenuOpen && (
         <div 
           className="fixed inset-0 top-[68px] bg-slate-900/10 backdrop-blur-[1px] z-30 transition-opacity"
@@ -330,12 +315,10 @@ export default function Navbar({ onOpenSearch }) {
         />
       )}
 
-      {/* Explore Programs Mega Menu (Browse by domains layout matching College Vidya) */}
       {isMegaMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white border-t border-slate-200 border-b border-slate-200 shadow-2xl z-50 animate-fade-in">
           <div className="max-w-7xl mx-auto flex min-h-[500px]">
             
-            {/* Left Sidebar: Domains */}
             <div className="w-72 border-r border-slate-100 bg-slate-50/50 p-6 flex flex-col gap-2 max-h-[580px] overflow-y-auto">
               <h3 className="font-heading text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 px-3 text-left">
                 Browse by domains
@@ -366,10 +349,8 @@ export default function Navbar({ onOpenSearch }) {
               </div>
             </div>
 
-            {/* Right Panel: Content Grid & Search */}
             <div className="flex-1 p-6 flex flex-col max-h-[580px] overflow-hidden">
               
-              {/* Search Bar & Close button */}
               <div className="flex items-center justify-between gap-4 mb-6">
                 <div className="relative flex-1 max-w-xl">
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -389,7 +370,6 @@ export default function Navbar({ onOpenSearch }) {
                 </button>
               </div>
 
-              {/* Cards Grid */}
               <div className="flex-1 overflow-y-auto pr-1">
                 {filteredCourses.length > 0 ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 pb-4">
@@ -400,7 +380,6 @@ export default function Navbar({ onOpenSearch }) {
                         className="group bg-white border border-slate-150 hover:border-blue-500/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 rounded-2xl p-4 flex flex-col justify-between cursor-pointer text-left h-[180px]"
                       >
                         <div>
-                          {/* Top Badges & Logo */}
                           <div className="flex items-center justify-between gap-2 mb-3">
                             <div className="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-base shadow-sm border border-slate-100 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
                               {course.logo || "🎓"}
@@ -412,13 +391,11 @@ export default function Navbar({ onOpenSearch }) {
                             )}
                           </div>
 
-                          {/* Course/Certificate Title */}
                           <h4 className="font-heading font-extrabold text-xs text-slate-800 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">
                             {course.title}
                           </h4>
                         </div>
 
-                        {/* Footer info: Duration and Comparison */}
                         <div className="mt-3 space-y-2">
                           <span className="inline-block px-2.5 py-1 bg-blue-50 text-blue-600 text-[9px] font-bold rounded-lg">
                             {course.duration}

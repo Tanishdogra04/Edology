@@ -471,21 +471,17 @@ export default function Home() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Hero Section */}
       <div className="relative pt-6 pb-16 lg:pt-10 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-            {/* Left Column: Content */}
             <div className="col-span-1 lg:col-span-7 space-y-8 text-left">
 
-              {/* Accreditation Badge */}
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-600 shadow-sm animate-float">
                 <i className="bi bi-sparkles text-blue-600 text-sm"></i>
                 <span>UGC-Entitled & AICTE Approved Online Degrees</span>
               </div>
 
-              {/* Bold Premium Heading */}
               <h1 className="font-heading font-extrabold tracking-tight leading-[1.1] text-slate-900 text-4xl sm:text-5xl lg:text-[62px]">
                 Advance Your Career.<br />
                 Study Online from<br />
@@ -494,12 +490,10 @@ export default function Home() {
                 </span>
               </h1>
 
-              {/* Premium Slogan Description with highlighted brand color for Universities */}
               <p className="font-sans text-slate-600 text-base sm:text-lg font-medium max-w-xl leading-relaxed">
                 Earn recognized Master's, MBA, and professional qualifications delivered 100% online. Gain the practical skills to succeed in today's job market from world-class <span className="text-blue-600 font-bold">Universities</span>.
               </p>
 
-              {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   to="/courses"
@@ -516,7 +510,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Social Proof Graduating Info */}
               <div className="flex items-center gap-4 pt-4 border-t border-slate-100 max-w-md">
                 <div className="flex -space-x-2.5">
                   <img className="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=120" alt="Student 1" />
@@ -534,10 +527,8 @@ export default function Home() {
 
             </div>
 
-            {/* Right Column: Visual Portrait & Floating cards */}
             <div className="col-span-1 lg:col-span-5 relative flex justify-center mt-8 lg:mt-0">
 
-              {/* Student Frame with Carousel Transitions */}
               <div className="relative w-full max-w-[380px] sm:max-w-[420px] aspect-square rounded-[32px] overflow-hidden shadow-2xl border border-slate-100 bg-slate-50">
                 {rightSlides.map((src, idx) => (
                   <div
@@ -554,7 +545,6 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Floating Card 1 (Partner Info with Bootstrap Icon) */}
               <div className="absolute top-8 -left-8 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-100 shadow-xl flex items-center gap-2.5 animate-float z-10">
                 <div className="w-8 h-8 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500">
                   <i className="bi bi-award-fill text-amber-500 text-lg"></i>
@@ -565,7 +555,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Floating Card 2 (Flexibility Info - Check replaced with Clock Icon) */}
               <div className="absolute bottom-10 -right-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-100 shadow-xl flex items-center gap-2.5 animate-float [animation-delay:3s] z-10">
                 <div className="w-8 h-8 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600">
                   <i className="bi bi-clock-history text-emerald-600 text-lg"></i>
@@ -576,14 +565,12 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Floating Card 3 (Interactive Notification Icon leading to News & Insights) */}
               <Link
                 to="/blog"
                 className="absolute top-12 -right-12 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-blue-100 hover:border-blue-300 shadow-xl flex items-center gap-3 animate-float [animation-delay:1.5s] z-20 cursor-pointer group hover:scale-105 duration-300"
               >
                 <div className="relative w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <i className="bi bi-bell-fill text-lg animate-swing"></i>
-                  {/* Pulsing Red Dot */}
                   <span className="absolute -top-1 -right-1 flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
@@ -603,7 +590,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Stats Section */}
       <div className="bg-slate-50/50 py-16 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -612,25 +598,20 @@ export default function Home() {
                 key={stat.id}
                 className="group relative bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1.5 transition-all duration-300 text-left"
               >
-                {/* Accent top border highlight on hover */}
                 <div className="absolute inset-x-0 -top-px h-1 rounded-t-2xl bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
-                {/* Icon Box */}
                 <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-5 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <i className={`bi ${stat.icon} text-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}></i>
                 </div>
 
-                {/* Value */}
                 <div className="text-3xl font-extrabold text-slate-900 tracking-tight font-heading mb-1">
                   {stat.value}
                 </div>
 
-                {/* Label */}
                 <div className="text-sm font-bold text-slate-800 font-heading mb-2">
                   {stat.label}
                 </div>
 
-                {/* Description */}
                 <p className="text-xs text-slate-500 font-medium font-sans leading-relaxed">
                   {stat.desc}
                 </p>
@@ -640,11 +621,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Top Cities Alumni Hubs Section */}
       <div className="bg-white py-20 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-600 shadow-sm animate-float">
               <i className="bi bi-geo-alt-fill text-blue-600"></i>
@@ -658,30 +637,25 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Grid of City Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {cities.map((city) => (
               <div 
                 key={city.id}
                 className="group relative h-[260px] rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 ease-out cursor-pointer flex flex-col justify-end"
               >
-                {/* Background Image */}
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                   <img 
                     src={city.image} 
                     alt={`${city.name} Alumni Hub`} 
                     className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-                  {/* Premium dark gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 </div>
 
-                {/* Glassmorphic Top Count Badge */}
                 <div className="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-wide shadow-md">
                   {city.count}
                 </div>
 
-                {/* Content Overlay */}
                 <div className="relative p-4 text-left z-10">
                   <p className="text-[9px] font-bold text-blue-400 uppercase tracking-widest leading-none mb-1">
                     {city.hub}
@@ -693,7 +667,6 @@ export default function Home() {
                     Focus: {city.focus}
                   </p>
                   
-                  {/* Hover Revealed Join Action */}
                   <div className="flex items-center gap-1 text-[10px] font-bold text-white opacity-85 group-hover:opacity-100 group-hover:text-blue-300 transition-all duration-300">
                     <span>Explore Circle</span>
                     <i className="bi bi-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -706,20 +679,17 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Find Your Course Section */}
       <div className="bg-slate-50/30 py-20 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            {/* Title & Filter Header */}
             <div className="col-span-1 lg:col-span-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8 border-b border-slate-100 pb-6">
               <div className="flex items-center gap-4">
                 <h2 className="font-heading font-extrabold text-slate-900 text-3xl tracking-tight text-left">
                   Find Your Course
                 </h2>
               </div>
-              {/* Search input field */}
               <div className="relative w-full md:max-w-md flex items-center bg-white border border-slate-200 rounded-lg px-4 py-2.5 shadow-sm focus-within:ring-2 focus-within:ring-blue-500/25 focus-within:border-blue-500 transition-all">
                 <i className="bi bi-search text-slate-400 mr-3 text-sm"></i>
                 <input 
@@ -732,11 +702,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Left Sidebar: Collapsible filter lists */}
             <div className="col-span-1 lg:col-span-3 space-y-4 text-left lg:sticky lg:top-24">
               <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
                 
-                {/* Accordion 1: EDUCATION TYPE */}
                 <div className="border-b border-slate-100">
                   <button 
                     onClick={() => toggleAccordion('educationType')}
@@ -767,7 +735,6 @@ export default function Home() {
                   )}
                 </div>
 
-                {/* Accordion 2: FACULTY */}
                 <div className="border-b border-slate-100">
                   <button 
                     onClick={() => toggleAccordion('faculty')}
@@ -806,7 +773,6 @@ export default function Home() {
                   )}
                 </div>
 
-                {/* Accordion 3: SCHOOL */}
                 <div className="border-b border-slate-100">
                   <button 
                     onClick={() => toggleAccordion('school')}
@@ -848,7 +814,6 @@ export default function Home() {
                   )}
                 </div>
 
-                {/* Accordion 4: PRICE RANGE */}
                 <div>
                   <button 
                     onClick={() => toggleAccordion('priceRange')}
@@ -891,7 +856,6 @@ export default function Home() {
 
               </div>
 
-              {/* Clear All Filters Button */}
               {(searchQuery || selectedLevels.length > 0 || selectedFaculties.length > 0 || selectedSchools.length > 0 || priceFrom || priceTo) && (
                 <button 
                   type="button"
@@ -904,7 +868,6 @@ export default function Home() {
               )}
             </div>
 
-            {/* Right Side: Responsive dynamic filtered courses grid */}
             <div className="col-span-1 lg:col-span-9">
               {filteredCourses.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -920,10 +883,8 @@ export default function Home() {
                         key={course.id}
                         className={`group relative h-[380px] bg-white border border-slate-150 rounded-xl ${topBorderColor} overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between p-6`}
                       >
-                        {/* Front Side Layer */}
                         <div className="flex flex-col h-full justify-between transition-opacity duration-300 group-hover:opacity-0 pointer-events-auto group-hover:pointer-events-none">
                           <div className="space-y-4">
-                            {/* Category & Partner Logo */}
                             <div className="flex items-start justify-between gap-4">
                               <span className={`text-[10px] font-bold tracking-wide uppercase ${isBlue ? 'text-[#110060]' : 'text-[#007b78]'}`}>
                                 {course.category}
@@ -933,13 +894,11 @@ export default function Home() {
                               </div>
                             </div>
 
-                            {/* Course Title */}
                             <h3 className="font-heading text-[17px] font-extrabold text-slate-800 tracking-tight leading-snug text-left line-clamp-4">
                               {course.title}
                             </h3>
                           </div>
 
-                          {/* Card bottom details */}
                           <div className="space-y-4 mt-auto">
                             <div className="space-y-2 text-left">
                               <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
@@ -958,10 +917,8 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Back Side Layer (Revealed on Hover) */}
                         <div className={`absolute inset-0 w-full h-full p-6 text-white ${themeHoverBg} flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto z-10`}>
                           
-                          {/* Top-Right Plus/Check Button */}
                           <button
                             type="button"
                             onClick={(e) => {
@@ -980,12 +937,10 @@ export default function Home() {
                           </button>
 
                           <div className="space-y-6 mt-4">
-                            {/* Course Title */}
                             <h3 className="font-heading text-[17px] font-extrabold leading-snug tracking-tight">
                               {course.title}
                             </h3>
 
-                            {/* Additional Details */}
                             <div className="space-y-3.5 text-xs text-white/90">
                               <div>
                                 <span className="font-bold block uppercase text-[10px] tracking-wider text-white/70 mb-0.5">Duration:</span>
@@ -998,7 +953,6 @@ export default function Home() {
                             </div>
                           </div>
 
-                          {/* Price and Action Button */}
                           <div className="space-y-4 mt-auto">
                             <div className="text-2xl font-extrabold tracking-tight font-heading">
                               ₹{course.price.toLocaleString('en-IN')}
@@ -1029,11 +983,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured Colleges Section */}
       <div className="bg-white py-20 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header row with Title & "View More" */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12 border-b border-slate-100 pb-6">
             <div className="text-left space-y-1">
               <h2 className="font-heading font-extrabold text-slate-900 text-3xl tracking-tight">
@@ -1052,7 +1004,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {indianColleges.map((univ) => {
               // Custom brand acronym for logo display based on university id
@@ -1069,7 +1020,6 @@ export default function Home() {
                   key={univ.id}
                   className="group bg-white border border-slate-150 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
                 >
-                  {/* Campus Image container with hover zoom */}
                   <div className="relative aspect-video overflow-hidden bg-slate-105">
                     <img 
                       src={univ.image} 
@@ -1079,12 +1029,9 @@ export default function Home() {
                     />
                   </div>
 
-                  {/* Details block */}
                   <div className="p-6 flex-1 flex flex-col justify-between text-left">
                     <div className="space-y-4">
-                      {/* Logo and Title Header */}
                       <div className="flex items-start gap-4">
-                        {/* CSS Logo Avatar Box */}
                         <div className="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100/80 flex-shrink-0 flex items-center justify-center text-[#110060] font-heading font-black text-xs shadow-inner">
                           {acronym}
                         </div>
@@ -1101,13 +1048,11 @@ export default function Home() {
                         </div>
                       </div>
 
-                      {/* Description Paragraph Snippet */}
                       <p className="text-slate-500 text-xs leading-relaxed font-sans font-medium line-clamp-3">
                         {univ.description}
                       </p>
                     </div>
 
-                    {/* Bottom Link Action */}
                     <div className="flex items-center justify-between mt-6 pt-4 border-t border-slate-100">
                       <span className="text-[10px] uppercase font-extrabold tracking-wider text-slate-400 font-heading">
                         Est. {univ.established}
@@ -1130,11 +1075,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Top Exams Section */}
       <div className="bg-gradient-to-tr from-slate-50 to-blue-50/20 py-20 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header Row with Left-Aligned Title and Category Tabs */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 border-b border-slate-150 pb-px">
             <div className="text-left space-y-1 pb-4">
               <h2 className="font-heading font-extrabold text-slate-900 text-3xl tracking-tight">
@@ -1145,7 +1088,6 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Horizontal Tabs / Pills styled with border-b indicators */}
             <div className="flex -mb-px overflow-x-auto">
               {['Management', 'Technology', 'Finance & Law'].map((cat) => (
                 <button
@@ -1164,7 +1106,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {examsList
               .filter((exam) => exam.category === activeExamCategory)
@@ -1176,7 +1117,6 @@ export default function Home() {
                   >
                     <div className="flex flex-col h-full justify-between">
                       <div className="space-y-4">
-                        {/* Logo and Acronym Header */}
                         <div className="flex items-start gap-4">
                           <div className="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100/80 flex-shrink-0 flex items-center justify-center text-[#110060] font-heading font-black text-xs shadow-inner">
                             {exam.acronym}
@@ -1191,21 +1131,17 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Description */}
                         <p className="text-slate-500 text-xs leading-relaxed font-sans font-medium line-clamp-3 text-left">
                           {exam.description}
                         </p>
                       </div>
 
-                      {/* Card bottom details */}
                       <div className="space-y-4 mt-auto">
-                        {/* Registration timeline */}
                         <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 text-left">
                           <i className="bi bi-calendar-event text-slate-400 text-sm"></i>
                           <span>Reg: {exam.registration}</span>
                         </div>
 
-                        {/* Universal Button */}
                         <button
                           type="button"
                           onClick={() =>
@@ -1228,11 +1164,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Customer Testimonials Section */}
       <div className="bg-white py-20 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header Block */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-600 shadow-sm animate-float">
               <i className="bi bi-chat-square-quote-fill text-blue-600"></i>
@@ -1246,31 +1180,26 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((t) => (
               <div 
                 key={t.id}
                 className="group relative bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-blue-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Stylized double quote decoration */}
                 <i className="bi bi-quote text-5xl text-blue-500/10 absolute top-6 right-6 leading-none"></i>
                 
                 <div className="space-y-4">
-                  {/* Rating Stars */}
                   <div className="flex items-center text-left">
                     {[...Array(t.rating)].map((_, i) => (
                       <i key={i} className="bi bi-star-fill text-amber-400 mr-1 text-sm"></i>
                     ))}
                   </div>
 
-                  {/* Quote Body */}
                   <p className="font-sans text-slate-600 text-sm italic font-medium leading-relaxed text-left line-clamp-6">
                     "{t.quote}"
                   </p>
                 </div>
 
-                {/* Alumni profile info footer */}
                 <div className="flex items-center gap-4 mt-8 pt-4 border-t border-slate-100 text-left">
                   <img 
                     src={t.image} 
@@ -1294,16 +1223,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* FAQ Section */}
       <div className="bg-slate-50/50 py-20 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left Column: FAQ Content */}
             <div className="col-span-1 lg:col-span-7 space-y-8 text-left">
               
-              {/* Header Block */}
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-600 shadow-sm animate-float">
                   <i className="bi bi-question-circle-fill text-blue-600"></i>
@@ -1317,7 +1243,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Accordion List wrapper */}
               <div className="space-y-4">
                 {homeFaqs.map((faq, index) => {
                   const isOpen = activeFaqIndex === index;
@@ -1335,7 +1260,6 @@ export default function Home() {
                         <i className={`bi bi-chevron-down text-slate-400 text-xs transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-600' : ''}`}></i>
                       </button>
                       
-                      {/* Accordion Answer Details */}
                       {isOpen && (
                         <div className="px-6 pb-5 pt-1 text-slate-500 text-xs sm:text-sm leading-relaxed text-left border-t border-slate-50">
                           {faq.answer}
@@ -1348,10 +1272,8 @@ export default function Home() {
 
             </div>
 
-            {/* Right Column: Visual Portrait & Floating cards */}
             <div className="col-span-1 lg:col-span-5 relative flex justify-center mt-8 lg:mt-0">
               
-              {/* Frame with rounded corners */}
               <div className="relative w-full max-w-[380px] sm:max-w-[420px] aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border border-slate-100 bg-white">
                 <img 
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" 
@@ -1360,7 +1282,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* Floating Card: Have Questions? */}
               <div className="absolute bottom-6 -left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-blue-100 shadow-xl flex items-center gap-3 animate-float z-10">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
                   <i className="bi bi-telephone-fill text-lg"></i>
